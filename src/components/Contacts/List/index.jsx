@@ -8,7 +8,6 @@ function List({ contacts }) {
       item[key].toString().toLowerCase().includes(filterText.toLowerCase())
     )
   })
-  console.log("filtered", filtered)
 
   return (
     <div>
@@ -20,11 +19,21 @@ function List({ contacts }) {
         value={filterText}
         onChange={(e) => setFilterText(e.target.value)}
       />
-      <ul>
+      <ul className="list">
         {filtered.map((contact, key) => (
-          <li key={key}>{contact.fullName}</li>
+          <li key={key}>
+            <div>
+              <small>Name</small>
+              {contact.fullName}
+            </div>
+            <div>
+              <small>Phone Number</small>
+              {contact.phoneNumber}
+            </div>
+          </li>
         ))}{" "}
       </ul>
+      <p>Total Contacts ({filtered.length})</p>
     </div>
   )
 }

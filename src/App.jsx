@@ -1,8 +1,9 @@
 import Contacts from "./components/Contacts"
+import "./App.css"
 
 function App() {
   return (
-    <div>
+    <div className="App">
       <Contacts />
     </div>
   )
