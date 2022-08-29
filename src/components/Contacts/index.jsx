@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
-import Form from "./Form"
 import List from "./List"
+import Form from "./Form"
 
 function Contacts() {
   const [contacts, setContacts] = useState([])
@@ -12,8 +12,8 @@ function Contacts() {
   return (
     <>
       Contact List
-      <List />
-      <Form setContacts={setContacts} contacts={contacts} />
+      <List contacts={contacts} />
+      <Form contacts={contacts} setContacts={setContacts} />
     </>
   )
 }
